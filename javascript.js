@@ -35,6 +35,9 @@ if (edad >= 18) {
 
 //Ejercicio de Precios
 
+//Array
+
+
 let productos = [
   { nombre: "Matutino", precio: 100 },
   { nombre: "Vespertino", precio: 200 },
@@ -42,6 +45,8 @@ let productos = [
 ];
 
 let seleccionados = [];
+
+//Método
 
 for (let i = 0; i < productos.length; i++) {
   let respuesta = prompt(`¿Deseas el producto ${productos[i].nombre}? (S/N)`);
@@ -57,3 +62,6 @@ for (let i = 0; i < seleccionados.length; i++) {
 }
 
 alert(`El total de tu compra es ${total} pesos`);
+
+
+
