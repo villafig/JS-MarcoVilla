@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarcoVillaJS</title>
+</head>
+<body>
+	<div>
+        <h1>Cuantas Pelotas usaran por Jugador</h1>
+        <p id="parrafo">Introduce las pelotas a usar por jugador separado por coma</p>
+        
+        <input style="background-color:powderblue;" type="text" id="pijas"></input>
+        <br><br><input type="button" value="calcular" onclick="calcular()"></input>
+        <input type="button" value="Borrar" onclick="Reiniciar()">
+        <p id="array"></p>
+        
+        <h1 id="resultado"></h1>
+	</div>
+</body>
+</html>
+
+
+
+
+
+<script>
+function Reiniciar() {
+    location.reload();
+  }
+  
+  function calcular() {
+    let array = document.getElementById("pijas").value.split(/,/);
+  
+    let suma = 0;
+  
+    //SUMA
+    for(i=0; i < array.length; i++){
+      suma = parseInt(array[i]) + suma;
+    }
+    
+    let precioPelota = suma * 3;
+  
+    // Crear objeto pelota
+    let pelota = {
+      cantidad: suma,
+      precioUnitario: 3,
+      precioTotal: precioPelota
+    };
+  
+    // Modificar etiqueta 
+    let villatorolo= document.querySelector("h1");
+    villatorolo.innerHTML = "Cuenta a pagar por las pelotas: $" + pelota.precioTotal;
+  
+    // Crear elemento HTML 
+    let resultado = document.createElement("div");
+    resultado.innerHTML = "El total de pelotas a usar: " + pelota.cantidad + "<br>" +
+                           "El precio por bola es de: $" + pelota.precioUnitario + "<br>";
+  
+    // Añadir el elemento al DOM
+    document.getElementById("resultado").appendChild(resultado);
+  }
+</script>
